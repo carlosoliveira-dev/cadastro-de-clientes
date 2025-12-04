@@ -6,7 +6,8 @@
     "dev": "ts-node-dev -r tsconfig-paths/register --transpile-only --ignore-watch node_modules src/external/api/server.ts",
     "build": "tsc",
     "start": "node dist/external/api/server.js",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "test:api": "jest --watchAll --config ./jest.api.config.js"
   },
   "keywords": [],
   "author": "Carlos Júnior Torres de Oliveira",
