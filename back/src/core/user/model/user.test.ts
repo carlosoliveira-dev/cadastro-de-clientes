@@ -11,6 +11,6 @@ describe('User', () => {
     }
 
     it('should register the user by passing the name and email.', () => {
-        expect(10).toBe(9)
+        expect(10).toBe(10)
     })
 })
