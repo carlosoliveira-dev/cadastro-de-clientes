@@ -1,7 +1,8 @@
-const Error = {
+const Errors = {
     USUARIO_JA_EXISTE: 'USUARIO_JA_EXISTE',
     USUARIO_NAO_EXISTE: 'USUARIO_NAO_EXISTE',
+    USUARIO_NOME_VAZIO: 'USUARIO_NOME_VAZIO',
     SENHA_INCORRETA: 'SENHA_INCORRETA',
 } as const
 
-export default Error
+export default Errors
