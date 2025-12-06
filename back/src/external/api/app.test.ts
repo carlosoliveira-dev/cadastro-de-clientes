@@ -1,3 +1,4 @@
+import Errors from '@/core/shared/errors';
 import app from './app';
 import request from 'supertest';
 
@@ -13,3 +14,14 @@ describe('API', () => {
     });
 
 });
+
+describe('API USER', () => {
+    it('deve retornar uma mensagem de erro se tentar cadastrar usuario com nome vazio', async () => {
+          
+        const response = await request(app)
+            .get('/api/usuarios/registrar')
+            .expect(400);
+
+        expect(response.text).toBe(Errors.USUARIO_NOME_VAZIO);
+    });
+})

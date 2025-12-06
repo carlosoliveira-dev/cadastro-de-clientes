@@ -20,7 +20,13 @@ export default class User {
     this.password = data.password;
   }
 
-  validateName(): string {
-    return Errors.USUARIO_NOME_VAZIO
+  validateName() {
+    if(this.name == ''){
+      throw new Error(Errors.USUARIO_NOME_VAZIO);
+    }
+  }
+
+  validateEmail(): string {
+      throw new Error(Errors.USUARIO_EMAIL_VAZIO);
   }
 }

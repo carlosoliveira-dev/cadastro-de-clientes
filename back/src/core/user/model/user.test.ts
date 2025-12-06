@@ -8,7 +8,11 @@ describe('user validations', () => {
         email: "user@example.com",
     });
 
-    it('returns a message if name of user is empty', () => {
-        expect(user.validateName()).toBe(Errors.USUARIO_NOME_VAZIO)
+    it("should throw an error when the user's name is empty", () => {
+        expect(() => user.validateName()).toThrow(Errors.USUARIO_NOME_VAZIO);
+    })
+
+    it("should throw an error when the user's email is empty", () => {
+        expect(() => user.validateEmail()).toThrow(Errors.USUARIO_EMAIL_VAZIO);
     })
 })
