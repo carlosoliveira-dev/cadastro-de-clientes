@@ -2,7 +2,7 @@ import User from "@/core/user/model/user"
 import RegisterUser from "@/core/user/service/register-user"
 import { Express } from "express"
 
-export default class RegistrarUsuarioController {
+export default class RegisterUserController {
     constructor(
         server: Express,
         usecase: RegisterUser
