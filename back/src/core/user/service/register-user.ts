@@ -13,8 +13,10 @@ export default class RegisterUser
     async execute(user: User): Promise<void> {        
         
         const newUser = new User({
-            name: ,
-            email: "carlos@example.com",
+            name: user.name,
+            email: user.email,
+            id: user.id,
+            password: user.password
         });
 
         this.repositorio.add(newUser)

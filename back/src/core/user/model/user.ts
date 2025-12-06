@@ -8,10 +8,10 @@ export interface UserData {
 }
 
 export default class User {
-  private name: string;
-  private email: string;
-  private id?: string;
-  private password?: string;
+  name: string;
+  email: string;
+  id?: string;
+  password?: string;
 
   constructor(data: UserData) {
     this.name = data.name;
