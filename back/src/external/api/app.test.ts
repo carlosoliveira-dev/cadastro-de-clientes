@@ -15,14 +15,20 @@ describe('API', () => {
 
 });
 
-describe('API USER', () => {
+describe('RegisterUserController()', () => {
     it('deve retornar uma mensagem de erro se tentar cadastrar usuario com nome vazio', async () => {
           
-        const response = await request(app)
+            await request(app)
             .post('/api/usuarios/registrar')
-            .send({name: 'john', email: 'john@gmail.com'})
+            .send({name: '', email: 'user@gmail.com'})
             .expect(400);
+    });
 
-        // expect(response.text).toBe(Errors.USUARIO_NOME_VAZIO);
+     it('deve retornar uma mensagem de erro se tentar cadastrar usuario com email vazio', async () => {
+          
+            await request(app)
+            .post('/api/usuarios/registrar')
+            .send({name: 'user', email: ''})
+            .expect(400);
     });
 })

@@ -18,6 +18,9 @@ export default class User {
     this.email = data.email;
     this.id = data.id;
     this.password = data.password;
+
+    this.validateName()
+    this.validateEmail()
   }
 
   validateName() {
