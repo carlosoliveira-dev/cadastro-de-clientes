@@ -1,10 +1,11 @@
-CREATE TABLE IF NOT EXISTS tasks (
+CREATE TABLE IF NOT EXISTS users (
  id SERIAL PRIMARY KEY,
- description TEXT NOT NULL,
- done BOOLEAN
+ name TEXT NOT NULL,
+ email TEXT NOT NULL,
+ password TEXT NOT NULL
 );
 
-INSERT INTO tasks (description, done) VALUES
- ('Programar', FALSE),
- ('Estudar', TRUE),
- ('Caminhar', FALSE);
+INSERT INTO users (name, email, password) VALUES
+ ('John', 'john@gmail.com', 'p@ssword'),
+ ('Maria', 'maria@gmail.com', 'p@ssword'),
+ ('Camila', 'camila@gmail.com', 'p@ssword');
