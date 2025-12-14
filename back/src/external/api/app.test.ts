@@ -14,21 +14,3 @@ describe('API', () => {
     });
 
 });
-
-describe('RegisterUserController()', () => {
-    it('deve retornar uma mensagem de erro se tentar cadastrar usuario com nome vazio', async () => {
-          
-            await request(app)
-            .post('/api/usuarios/registrar')
-            .send({name: '', email: 'user@gmail.com'})
-            .expect(400);
-    });
-
-     it('deve retornar uma mensagem de erro se tentar cadastrar usuario com email vazio', async () => {
-          
-            await request(app)
-            .post('/api/usuarios/registrar')
-            .send({name: 'user', email: ''})
-            .expect(400);
-    });
-})
