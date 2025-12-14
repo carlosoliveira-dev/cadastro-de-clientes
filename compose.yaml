@@ -1,6 +1,21 @@
 name: cadastro_de_clientes
 
 services:
+  frontend-dev:
+      build:
+        context: ./app
+        dockerfile: Dockerfile
+      container_name: frontend_dev
+      ports:
+        - "3000:3000"
+      develop:
+        watch:
+          - action: sync
+            path: ./app
+            target: /app
+      profiles:
+        - dev
+
   backend-dev:
       build:
         context: ./back

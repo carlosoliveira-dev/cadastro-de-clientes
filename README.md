@@ -5,11 +5,11 @@
 ### Inicia a aplicação em modo desenvolvedor
 docker compose --profile dev watch
 
+### Faz o build dos serviços de um profile
+docker compose --profile dev build
+
 ### Inicia a aplicação em modo de produção
 docker compose --profile prod up
-
-### Faz o build dos serviços de um profile
-docker compose --profile prod build
 
 ### Lista os grupos de serviços do docker compose
 docker compose ls
