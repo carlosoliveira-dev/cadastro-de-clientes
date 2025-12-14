@@ -1,0 +1,38 @@
+name: cadastro_de_clientes
+
+services:
+  backend-dev:
+      build:
+        context: ./back
+        dockerfile: Dockerfile
+      container_name: backend_dev
+      environment:
+        DATABASE_URL: postgres://postgres:secret@postgres-dev:5432/cadastro-clientes-db?sslmode=disable
+      ports:
+        - "4000:4000"
+      develop:
+        watch:
+          - action: sync
+            path: ./back
+            target: /app
+      profiles:
+        - dev
+
+  postgres-dev:
+      build:
+        context: ./back/src/external/db
+        dockerfile: Dockerfile
+      container_name: postgres_dev
+      environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: secret
+        POSTGRES_DB: cadastro-clientes-db
+      ports:
+        - "5432:5432"
+      volumes:
+        - cadastro_clientes_data_dev:/var/lib/postgresql/data
+      profiles:
+        - dev
+
+volumes:
+  cadastro_clientes_data_dev:
