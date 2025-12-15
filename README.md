@@ -15,7 +15,7 @@ docker compose --profile prod up
 docker compose ls
 
 ### Finaliza um grupo de serviços pelo nome
-docker compose -p cadastro_de_clientes down
+docker compose -p cadastro_de_clientes_app down
 
 ## Comandos do container postgress
 
