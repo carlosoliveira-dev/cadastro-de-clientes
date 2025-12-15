@@ -4,6 +4,8 @@ import RegisterUserController from './register-user-controller'
 import express, { Request, Response } from "express";
 import DeleteUser from '@/core/user/service/delete-user';
 import DeleteUserController from './delete-user-controller';
+import GetUsersController from './get-user-controller';
+import GetUsers from '@/core/user/service/get-users';
 
 const app = express();
 
@@ -19,9 +21,11 @@ app.get("/", (req: Request, res: Response) => {
 const repositoryUser = new RepositoryUserPg()
 const registerUser = new RegisterUser(repositoryUser)
 const deleteUser = new DeleteUser(repositoryUser)
+const getUsers = new GetUsers(repositoryUser)
 
 new RegisterUserController(app, registerUser)
 new DeleteUserController(app, deleteUser)
+new GetUsersController(app, getUsers)
 
 // Protected Routes
 

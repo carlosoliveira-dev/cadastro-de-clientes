@@ -3,4 +3,5 @@ import User from "../model/user"
 export default interface RepositoryUser {
     add(user: User): Promise<void>
     delete(id: string): Promise<void>
+    users(): Promise<[User]>
 }
