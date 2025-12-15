@@ -6,7 +6,7 @@
 docker compose --profile dev watch
 
 ### Faz o build dos serviços de um profile
-docker compose --profile dev build
+docker compose --profile dev build --no-cache
 
 ### Inicia a aplicação em modo de produção
 docker compose --profile prod up

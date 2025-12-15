@@ -20,7 +20,7 @@ export default class User {
     this.password = data.password;
 
     this.validateName()
-    this.validateEmail()
+    // this.validateEmail()
   }
 
   validateName() {

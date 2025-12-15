@@ -1,4 +1,4 @@
-name: cadastro_de_clientes
+name: cadastro_de_clientes_app
 
 services:
   frontend-dev:
